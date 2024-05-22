@@ -43,9 +43,14 @@ export default function Services() {
       ]
       
 
-  return services.map((e,i)=>{
+  return (
+  <>
+<div>
+  <h1 className='block sm:hidden mt-[2rem]  ml-[2rem] mb-[2rem] font-extrabold text-[2rem]'>Services</h1>
+  </div>
+  {services.map((e,i)=>{
         
-    return (<div key={i} className="hover:cursor-pointer max-w-sm rounded overflow-hidden shadow-lg">
+    return (<div key={i} className="hover:cursor-pointer bg-white max-w-sm rounded overflow-hidden shadow-lg">
   <div className="px-6 py-4">
     <div className="font-bold text-xl mb-2">{e.title}</div>
     
@@ -63,7 +68,7 @@ export default function Services() {
   </div>
   </div>
 </div>)
-    })
-    
-
+    })}
+  </>  
+)
 }
