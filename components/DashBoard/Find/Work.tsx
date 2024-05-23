@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import {
   Sheet,
@@ -7,22 +9,29 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import {useDispatch} from "react-redux";
+import {AppDispatch} from '@/Store/store';
+import { openModal } from '@/Store/findSlice';
+import { useAppDispatch, useAppSelector } from '@/Store/hooks';
 
 export interface task{
-    posted: string, // Represents the posting number, can be a string or number
-    title: string, // Title of the task
-    subtitle: string, // Subtitle or description of the task
-    proposals: number, // Number of proposals received for the task
-    Price: number // Price of the task
+    posted: string, 
+    title: string, 
+    subtitle: string, 
+    proposals: number, 
+    Price: number 
   };
   
-
 export default function Work({data}:{data:task}) {
+
+    const dispatch=useAppDispatch();
+    const state=useAppSelector((s)=>s.findWork.ModalData.title)
+
   return (
-   
   <Sheet>
   <SheetTrigger className='w-[100%]'>
-    <div className="my-[1rem] hover:cursor-pointer md:my-[2rem]  w-[95%] mx-[2.5%] ">
+    <div onClick={()=>dispatch(openModal({subtitle:data.subtitle,Price:data.Price,_id:0,title:data.title,posted:data.posted,proposals:data.proposals,}))}
+    className="my-[1rem] hover:cursor-pointer md:my-[2rem]  w-[95%] mx-[2.5%] ">
       <div className="lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l overflow-hidden">
       </div>
       <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
@@ -45,9 +54,9 @@ export default function Work({data}:{data:task}) {
     </div>
   </SheetTrigger>
 
-  <SheetContent className="w-[400px] sm:w-[540px] md:max-w-[100vw] md:min-w-[70vw]">
+  <SheetContent side={"right"} className="w-[400px] sm:w-[540px] md:max-w-[100vw] md:min-w-[70vw]">
     <SheetHeader>
-      <SheetTitle>Are you absolutely sure?</SheetTitle>
+      <SheetTitle><p>{state||"nope"}</p></SheetTitle>
       <SheetDescription>
         This action cannot be undone. This will permanently delete your account
         and remove your data from our servers.
@@ -55,7 +64,6 @@ export default function Work({data}:{data:task}) {
     </SheetHeader>
   </SheetContent>
 </Sheet>
-
   )
 }
 
