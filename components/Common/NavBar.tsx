@@ -10,6 +10,7 @@ import {
 import Image from 'next/image'
 import { Button } from '../ui/button'
 import Input from './Input'
+import Link from 'next/link'
 
 
 
@@ -32,7 +33,8 @@ export default function NavBar() {
 
   <DropdownMenuContent className='mt-[1rem]   '> 
 
-    <DropdownMenuItem className='text-[0.7rem] sm:text-[1rem] my-[1rem] font-bold    text-black'>Find Work for your Skills.</DropdownMenuItem>
+    <DropdownMenuItem className='text-[0.7rem] sm:text-[1rem] my-[1rem] font-bold   
+     text-black'><Link href={"/dashboard/find"}>Find Work for your Skills.</Link></DropdownMenuItem>
     <DropdownMenuSeparator />
     <DropdownMenuItem className='text-[0.7rem] sm:text-[1rem] font-bold my-[1rem]     text-black '>Join FindMeWork Premium</DropdownMenuItem>
   </DropdownMenuContent>
@@ -40,13 +42,15 @@ export default function NavBar() {
 
 <DropdownMenu >
   <DropdownMenuTrigger asChild> 
-  <Button className='p-[0.5rem] sm:p-[1rem] text-[0.7rem] bg-orange-500 hover:bg-orange-600  sm:text-[1rem] rounded-lg  '>Find Talent</Button>
+  <Button className='p-[0.5rem] sm:p-[1rem] text-[0.7rem] bg-orange-500 hover:bg-orange-600  sm:text-[1rem] rounded-lg  '>
+    
+    Find Talent</Button>
   </DropdownMenuTrigger>
   <DropdownMenuContent className='mt-[1rem]  '>
   
     <DropdownMenuItem  className='text-[0.7rem] sm:text-[1rem] text-black font-bold my-[1rem]'>
        
-        Hire a Pro
+    <Link href={"/dashboard/work"}> Hire a Pro</Link>
         </DropdownMenuItem>
     <DropdownMenuSeparator />
     <DropdownMenuItem className='font-bold my-[1rem]  text-[0.7rem] sm:text-[1rem]  text-black'>Buy Projects</DropdownMenuItem>

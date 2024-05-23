@@ -42,12 +42,12 @@ export default function TestiMonials() {
         align: "start",
         loop: true,
       }}
-    className='w-[100%] min-h-[400px]'>
-  <CarouselContent className='w-[100%] h-[100%]'>
+    className='min-h-[400px]'>
+  <CarouselContent className=' h-[100%]'>
       {
         reviews.map((e,i)=>{
        return (
-    <CarouselItem key={i} className="h-[100%] w-[50%]  sm:basis-1/2 md:basis-1/3  pl-4"><Card  name={e.name} review={e.review} /></CarouselItem>)
+    <CarouselItem key={i} className=" w-[50%]  sm:basis-1/2 md:basis-1/3  pl-4"><Card  name={e.name} review={e.review} /></CarouselItem>)
         })
       }
   </CarouselContent>

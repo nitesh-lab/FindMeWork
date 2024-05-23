@@ -7,7 +7,7 @@ export default function Intro() {
     <>
     <div className='mt-[2rem] grid h-[40vh] sm:h-[70vh] grid-cols-1 sm:grid-cols-2 grid-rows-1'>
 
-    <div className='flex flex-col w-[100%]   col-start-1 col-end-2'>
+    <div className='flex flex-col    col-start-1 col-end-2'>
       {/* title */}
     <div className='ml-[2rem]'>
     <h1 className='font-extrabold text-[2.5rem] sm:text-[3rem] lg:text-[4rem] xl:text-[5rem] text-orange-500 '>
