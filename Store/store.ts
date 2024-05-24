@@ -1,7 +1,7 @@
 
 import {configureStore} from "@reduxjs/toolkit";
 import FindWorkReducer from "./findSlice";
-
+import workSliceReducer from "./workSlice";
 
 export const MakeStore=()=>{
 
@@ -9,6 +9,7 @@ export const MakeStore=()=>{
         {
             reducer:{
             findWork:FindWorkReducer,
+            Work:workSliceReducer
             }
         }
         )
