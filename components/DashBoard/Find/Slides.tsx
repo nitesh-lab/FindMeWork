@@ -44,14 +44,11 @@ export default function Slides(){
         }
       ];
       
-     
-      
-
   return (
     <div className="w-[95vw] rounded-lg mx-[2.5vw] bg-orange-500 flex justify-center ">
     <Carousel
       style={{gap:"0px"}}
-      plugins={[Autoplay({ delay:2500,stopOnInteraction: true })]}
+      plugins={[Autoplay({ delay:2500,stopOnInteraction: false })]}
       opts={{
         align: "start",
         loop: true,

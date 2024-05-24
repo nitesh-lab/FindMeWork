@@ -14,11 +14,6 @@ const findWorkSlice=createSlice({
     initialState:init,
     reducers:{
     openModal:(state,action:PayloadAction<ModalData_type>)=>{
-        console.log(action.payload)
-        // state.ModalData.Price=action.payload.Price;
-        // state.ModalData._id=action.payload._id;
-        // state.ModalData.posted=action.payload.posted;
-        // state.ModalData.proposals=action.payload.proposals;
 
         const { posted, title, subtitle, proposals, Price, _id } = action.payload;
       return {

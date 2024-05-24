@@ -13,6 +13,7 @@ import {useDispatch} from "react-redux";
 import {AppDispatch} from '@/Store/store';
 import { openModal } from '@/Store/findSlice';
 import { useAppDispatch, useAppSelector } from '@/Store/hooks';
+import ClientInfo from './ClientInfo';
 
 export interface task{
     posted: string, 
@@ -25,7 +26,7 @@ export interface task{
 export default function Work({data}:{data:task}) {
 
     const dispatch=useAppDispatch();
-    const state=useAppSelector((s)=>s.findWork.ModalData.title)
+    const state=useAppSelector((s)=>s.findWork.ModalData)
 
   return (
   <Sheet>
@@ -54,12 +55,11 @@ export default function Work({data}:{data:task}) {
     </div>
   </SheetTrigger>
 
-  <SheetContent side={"right"} className="w-[400px] sm:w-[540px] md:max-w-[100vw] md:min-w-[70vw]">
+  <SheetContent side={"right"} className="overflow-y-scroll w-[100%] sm:w-[540px] md:max-w-[100vw] md:min-w-[70vw]">
     <SheetHeader>
-      <SheetTitle><p>{state||"nope"}</p></SheetTitle>
+      <SheetTitle><p className='text-center text-[1rem] sm:text-[1.4rem] '>Client Dsouza</p></SheetTitle>
       <SheetDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
+      <ClientInfo data={state}/>
       </SheetDescription>
     </SheetHeader>
   </SheetContent>
