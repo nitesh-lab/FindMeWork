@@ -11,6 +11,15 @@ import {
   } from "@/components/ui/dropdown-menu"
 import { MessageCircle, Text } from 'lucide-react'
 import SearchBar from '@/components/Common/SearchBar'
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+  } from "@/components/ui/select"
+import SelectedField from '@/components/Common/SelectedField'
+  
   
 
 export default function WorkProfileList() {
@@ -18,11 +27,25 @@ export default function WorkProfileList() {
    <>
    <p className='text-center  md:text-[3rem] font-bold my-[2rem]'>We had HandPicked Some Talented FreeLancers for You.</p>
 
-<div className='my-[1rem] md:my-[3rem]'>
+<div className=' my-[1rem] md:my-[3rem]'>
 <SearchBar />
+<SelectedField />
+<div className='my-[1.5rem] md:my-[2rem] flex justify-end w-[95%] mx-[2.5%]'>
+    <Select >
+  <SelectTrigger className="border-[1px] border-black w-[180px]">
+    <SelectValue defaultValue={"Experience"} />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="Experience">Experience</SelectItem>
+    <SelectItem value="Charges">Charges</SelectItem>
+    <SelectItem value="Success Rate">Success Rate</SelectItem>
+  </SelectContent>
+</Select>
 </div>
-<div className='flex md:flex-row  gap-[1rem] flex-col md:flex-wrap'>
-<div className="w-[95%] border-[1px] border-gray-300  mx-[2.5%] md:mx-[0.5%] md:w-[30%] bg-white p-2   sm:p-4 h-auto sm:h-64 rounded-2xl shadow-lg flex flex-col sm:flex-row gap-5 select-none">
+
+</div>
+<div className='w-[95%]  mx-[2.5%] md:mx-[0.5%]  flex  md:flex-row  gap-[1rem] flex-col md:flex-wrap'>
+<div className="w-[95%]   mx-[2.5%] md:mx-[0.5%] md:w-[30%] bg-white p-2   sm:p-4 h-auto sm:h-64 rounded-2xl shadow-lg flex flex-col sm:flex-row gap-5 select-none">
     <div
     className="h-52 sm:h-full sm:w-72 rounded-xl bg-gray-100 bg-center bg-cover">
         <Image src={"/Images/Logo.png"} className='h-[100%] w-[100%]' width={48} height={48} alt='nope'></Image>
